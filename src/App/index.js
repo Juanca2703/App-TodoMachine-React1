@@ -1,19 +1,24 @@
-import { TodoCounter } from './TodoCounter';
-import { TodoItem } from './TodoItem';
-import { TodoList } from './TodoList';
-import { TodoSearch } from './TodoSearch';
-import { CreateTodoButton } from './CreateTodoButton';
+import { TodoCounter } from '../TodoCounter';
+import { TodoItem } from '../TodoItem';
+import { TodoList } from '../TodoList';
+import { TodoSearch } from '../TodoSearch';
+import { CreateTodoButton } from '../CreateTodoButton';
+import { useLocalStorage } from './useLocalStorage';
 import React from 'react';
 
-const defaultTodos = [
-  {text: 'cortar cebolla', completed: true},
-  {text: 'Tomar curso de react', completed: false},
-  {text: 'Ser mejor', completed: false},
-  {text: 'ir a gym', completed: false},
-]
+// const defaultTodos = [
+//   {text: 'cortar cebolla', completed: true},
+//   {text: 'Tomar curso de react', completed: false},
+//   {text: 'Ser mejor', completed: false},
+//   {text: 'ir a gym', completed: false},
+// ]
+
+
+// Starting with Todo logic trough component App
 
 function App() {
-  const [todos, setTodos] = React.useState(defaultTodos);
+
+  const [todos, saveTodos] = useLocalStorage('TODOS_V1', []);
   const [searchValue,  setSearchValue] = React.useState('');
 
   const completedTodos = todos.filter(
@@ -31,17 +36,17 @@ function App() {
 
   const completeTodo =(text)=>{
     const newTodos=[...todos];
-    const todoIndex=newTodos.findIndex((todo)=>todo.text==text);
+    const todoIndex=newTodos.findIndex((todo)=>todo.text===text);
     newTodos[todoIndex].completed = true;
-    setTodos(newTodos);
+    saveTodos(newTodos);
   }
 
 
   const deleteTodo=(text)=>{
     const newTodos=[...todos];
-    const todoIndex=newTodos.findIndex((todo)=>todo.text==text);
+    const todoIndex=newTodos.findIndex((todo)=>todo.text===text);
     newTodos.splice(todoIndex,1);
-    setTodos(newTodos);
+    saveTodos(newTodos);
   }
   
   
