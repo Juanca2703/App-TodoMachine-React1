@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/App-TodoMachine-React1/static/css/main.3fe48d8c.css",
+    "main.js": "/App-TodoMachine-React1/static/js/main.75b08431.js",
+    "index.html": "/App-TodoMachine-React1/index.html",
+    "static/media/delete.svg": "/App-TodoMachine-React1/static/media/delete.d9c7e0eeb3f573572e1521b7b69ed33e.svg",
+    "static/media/check.svg": "/App-TodoMachine-React1/static/media/check.af03c9a6a0411e40578874e6f00e807b.svg",
+    "main.3fe48d8c.css.map": "/App-TodoMachine-React1/static/css/main.3fe48d8c.css.map",
+    "main.75b08431.js.map": "/App-TodoMachine-React1/static/js/main.75b08431.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3fe48d8c.css",
+    "static/js/main.75b08431.js"
+  ]
+}
